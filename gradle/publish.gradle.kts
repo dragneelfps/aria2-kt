@@ -27,6 +27,7 @@ extensions.configure<PublishingExtension> {
             artifact(dokkaJavadocJar.get())
             artifact(dokkaHtmlJar.get())
             artifact(sourcesJar)
+            from(components["java"])
             pom {
                 name.set("Aria2.kt")
                 description.set("Aria2 Client written in Kotlin")
