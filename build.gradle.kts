@@ -3,19 +3,20 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version Versions.kotlinVersion
     kotlin("plugin.serialization") version Versions.kotlinVersion
+    id("org.jetbrains.dokka") version Versions.dokkaVersion
     `maven-publish`
+    signing
 }
 
-group = "io.nooblabs"
-version = "0.0.1"
+group = "io.github.dragneelfps"
+version = Ci.version
 
 repositories {
-    mavenCentral()
+    jcenter()
     maven(url = "https://kotlin.bintray.com/kotlinx/")
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
     implementation(Deps.KtorClient.okhttp)
     implementation(Deps.KtorClient.logging)
     implementation(Deps.KtorClient.websockets)
@@ -26,17 +27,12 @@ dependencies {
     implementation(Deps.logbackClassic)
 }
 
-tasks.withType<KotlinCompile>() {
+tasks.withType<KotlinCompile> {
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
         freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn")
     }
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("default") {
-            from(components["java"])
-        }
-    }
-}
+apply(from = "./gradle/dokka.gradle.kts")
+apply(from = "./gradle/publish.gradle.kts")

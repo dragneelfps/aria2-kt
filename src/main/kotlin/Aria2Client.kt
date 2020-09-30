@@ -1,10 +1,10 @@
-package io.nooblabs.aria2kt
+package io.github.dragneelfps.aria2kt
 
 import io.ktor.http.cio.websocket.*
-import io.nooblabs.aria2kt.Aria2Notification.Event
-import io.nooblabs.aria2kt.jsonrpc.JsonRpcClient
-import io.nooblabs.aria2kt.jsonrpc.RPCNotification
-import io.nooblabs.aria2kt.jsonrpc.RPCResponse
+import io.github.dragneelfps.aria2kt.Aria2Notification.Event
+import io.github.dragneelfps.aria2kt.jsonrpc.JsonRpcClient
+import io.github.dragneelfps.aria2kt.jsonrpc.RPCNotification
+import io.github.dragneelfps.aria2kt.jsonrpc.RPCResponse
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json

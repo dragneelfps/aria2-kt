@@ -3,6 +3,7 @@ import Versions.ktorVersion
 object Versions {
     const val kotlinVersion = "1.4.10"
     const val ktorVersion = "1.4.0"
+    const val dokkaVersion = "1.4.10"
 }
 
 object Deps {

@@ -1,4 +1,4 @@
-package io.nooblabs.aria2kt.jsonrpc
+package io.github.dragneelfps.aria2kt.jsonrpc
 
 import kotlinx.serialization.Serializable
 

@@ -1,4 +1,4 @@
-package io.nooblabs.aria2kt.jsonrpc
+package io.github.dragneelfps.aria2kt.jsonrpc
 
 import io.ktor.client.*
 import io.ktor.client.features.json.*
@@ -9,7 +9,7 @@ import io.ktor.client.request.*
 import io.ktor.http.*
 import io.ktor.http.cio.websocket.*
 import io.ktor.util.*
-import io.nooblabs.aria2kt.jsonrpc.ParamType.LIST
+import io.github.dragneelfps.aria2kt.jsonrpc.ParamType.LIST
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.flow.onEach

@@ -1,9 +1,9 @@
 @file:Suppress("UNCHECKED_CAST")
 
-package io.nooblabs.aria2kt.jsonrpc
+package io.github.dragneelfps.aria2kt.jsonrpc
 
-import io.nooblabs.aria2kt.jsonrpc.ParamType.LIST
-import io.nooblabs.aria2kt.jsonrpc.ParamType.OBJ
+import io.github.dragneelfps.aria2kt.jsonrpc.ParamType.LIST
+import io.github.dragneelfps.aria2kt.jsonrpc.ParamType.OBJ
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.*
 import java.util.*

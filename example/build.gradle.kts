@@ -1,7 +1,11 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("jvm")
+    application
+    kotlin("jvm") version "1.4.10"
+    id("com.github.johnrengelman.shadow") version "6.0.0"
+}
+
+application {
+    mainClassName = "MainKt"
 }
 
 repositories {
@@ -11,7 +15,6 @@ repositories {
 }
 
 dependencies {
-//    implementation(project(":"))
-    implementation("io.nooblabs:aria2-kt:0.0.1")
-    implementation(Deps.coroutines)
+    implementation("io.github.dragneelfps:aria2-kt:+")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
 }
