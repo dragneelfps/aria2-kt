@@ -3,6 +3,10 @@ apply(plugin = "signing")
 
 val dokkaJavadocJar by tasks.existing
 val dokkaHtmlJar by tasks.existing
+val sourcesJar by tasks.creating(Jar::class) {
+    archiveClassifier.set("sources")
+    from(project.the<SourceSetContainer>()["main"].allSource)
+}
 
 extensions.configure<PublishingExtension> {
     repositories {
@@ -22,7 +26,7 @@ extensions.configure<PublishingExtension> {
         create<MavenPublication>("maven") {
             artifact(dokkaJavadocJar.get())
             artifact(dokkaHtmlJar.get())
-            from(components["java"])
+            artifact(sourcesJar)
             pom {
                 name.set("Aria2.kt")
                 description.set("Aria2 Client written in Kotlin")

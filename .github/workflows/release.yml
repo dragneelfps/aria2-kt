@@ -16,7 +16,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Publish
-        run: ./gradlew publish
+        run: ./gradlew publishMavenPublicationToMavenRepository
         env:
            RELEASE_VERSION: ${{ github.event.inputs.version }}
            OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
