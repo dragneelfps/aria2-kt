@@ -1,6 +1,6 @@
 plugins {
     application
-    kotlin("jvm") version "1.4.10"
+    kotlin("jvm")
     id("com.github.johnrengelman.shadow") version "6.0.0"
 }
 
@@ -15,6 +15,13 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.dragneelfps:aria2-kt:+")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+    implementation(project(":"))
+    implementation(Deps.KtorClient.okhttp)
+    implementation(Deps.KtorClient.logging)
+    implementation(Deps.KtorClient.websockets)
+    implementation(Deps.KtorClient.serialization)
+    implementation(Deps.coroutines)
+    implementation(Deps.serialization)
+    implementation(Deps.okhttp3)
+    implementation(Deps.logbackClassic)
 }

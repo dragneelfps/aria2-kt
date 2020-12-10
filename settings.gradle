@@ -1,1 +1,3 @@
 rootProject.name = 'aria2-kt'
+
+include(":example")
